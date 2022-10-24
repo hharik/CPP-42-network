@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hharik <hharik@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/19 17:45:32 by hharik            #+#    #+#             */
+/*   Updated: 2022/07/24 16:42:11 by hharik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+
+Animal::Animal(void)
+{
+	std::cout << "Animal Default Constructor called" << std::endl;
+}
+
+
+Animal::~Animal(void)
+{
+	std::cout << "Animal Destructor called" << std::endl;
+}
+
+std::string	Animal::getType(void) const
+{
+	return (this->type);
+}
+
+void	Animal::makeSound(void) const
+{
+	std::cout << "any Animal say's c hsen mn c++" << std::endl;
+}
+
+Animal::Animal(const Animal &other)
+{
+	std::cout << "Animal Copy constructor called" << std::endl;
+	this->type = other.type;
+}
+
+Animal	&Animal::operator = (const Animal &other)
+{
+	std::cout << "Animal Assigment operator called "<< std::endl;
+	this->type = other.type;
+	return (*this);
+}
